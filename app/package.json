@@ -1,0 +1,11 @@
+{
+  "name": "tu-signes-app",
+  "version": "1.0.0",
+  "description": "web app pour envoyer un document pdf à deux personnes max",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexandre Bouzon 'damokles'",
+  "license": "ISC"
+}
