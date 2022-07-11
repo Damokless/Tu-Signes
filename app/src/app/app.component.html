@@ -3,6 +3,10 @@
   <p>L'app pour faire signer des documents aux gens</p>
   <div class="separationTop">
     <h2>1. choisir un document</h2>
-    <input type="file" class="file-upload" accept=".pdf" onchange="console.log(event.target.files)">
+    <input id="file-upload" type="file" class="inputfile" accept=".pdf" (change)="onFileSelected($event)">
+    <button mat-raised-button color="primary">
+      <label for="file-upload">Choose a file</label>
+    </button>
+    <p>{{fileName || "Pas de document."}}</p>
   </div>
 </div>

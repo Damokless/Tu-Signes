@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tu-signes';
+
+  fileName = '';
+
+  onFileSelected(event: any) {
+
+      const file:File = event.target.files[0];
+
+      if (file) {
+
+          this.fileName = file.name;
+
+      }
+  }
 }
