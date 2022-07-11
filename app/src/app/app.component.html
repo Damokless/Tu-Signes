@@ -10,4 +10,9 @@
     <p>{{fileName || "Pas de document."}}</p>
     <div *ngIf="isPdf" class="textError">Ce fichier n'est pas un pdf.</div>
   </div>
+  <div class="separationTop">
+    <h2>2. choisir un ou plusieurs destinataires ( max 2 )</h2>
+    <label>Email</label>
+    <input type="text" placeholder="john.doe@email.com" />
+  </div>
 </div>
