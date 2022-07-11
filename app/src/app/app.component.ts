@@ -9,15 +9,16 @@ export class AppComponent {
   title = 'tu-signes';
 
   fileName = '';
+  isPdf:boolean = false;
 
-  onFileSelected(event: any) {
+  onFileSelected(event:any) {
 
       const file:File = event.target.files[0];
 
       if (file) {
 
           this.fileName = file.name;
-
+          this.isPdf = file.type === "application/pdf" ? false : true
       }
   }
 }

@@ -8,5 +8,6 @@
       <label for="file-upload">Choose a file</label>
     </button>
     <p>{{fileName || "Pas de document."}}</p>
+    <div *ngIf="isPdf" class="textError">Ce fichier n'est pas un pdf.</div>
   </div>
 </div>
