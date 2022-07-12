@@ -1,0 +1,19 @@
+.spacer {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  opacity: 0;
+}
+
+ngx-file-drag-drop {
+  margin: 0px
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+}
