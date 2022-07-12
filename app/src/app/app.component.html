@@ -1,18 +1,9 @@
-<div class="content" role="main">
-  <h1>Tu signes</h1>
-  <p>L'app pour faire signer des documents aux gens</p>
-  <div class="separationTop">
-    <h2>1. choisir un document</h2>
-    <input id="file-upload" type="file" class="inputfile" accept=".pdf" (change)="onFileSelected($event)">
-    <button mat-raised-button color="primary">
-      <label for="file-upload">Choose a file</label>
-    </button>
-    <p>{{fileName || "Pas de document."}}</p>
-    <div *ngIf="isPdf" class="textError">Ce fichier n'est pas un pdf.</div>
-  </div>
-  <div class="separationTop">
-    <h2>2. choisir un ou plusieurs destinataires ( max 2 )</h2>
-    <label>Email</label>
-    <input type="text" placeholder="john.doe@email.com" />
-  </div>
+<div class="container">
+  <mat-card class="form-container">
+    <img src="assets/logo.png" alt="logo of tu signes" >
+
+    <hr class="spacer" />
+
+    <app-upload-form style="width: 80%"></app-upload-form>
+  </mat-card>
 </div>

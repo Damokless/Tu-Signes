@@ -1,0 +1,23 @@
+<form class="form" [formGroup]="uploadFileForm" (ngSubmit)="onSubmit()">
+  <!-- Dropzone file upload -->
+  <ngx-file-drag-drop formControlName="file" accept=".pdf" type="file" emptyPlaceholder="Déposez votre fichier"
+    (valueChanged)="onFileUpload($event)"></ngx-file-drag-drop>
+
+  <hr class="spacer" />
+  <!-- Email input -->
+  <mat-form-field appearance="fill">
+    <mat-label>Destinataires</mat-label>
+    <mat-chip-list #recipientsList formControlName="recipients" required>
+      <mat-chip *ngFor="let recipient of recipients" [removable]="true" (removed)="removeRecipient(recipient)">
+        {{ recipient }}
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+      <input formControlName="recipients" type="email" placeholder="Envoyer à" [matChipInputFor]="recipientsList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="addRecipient($event)" matInput />
+    </mat-chip-list>
+  </mat-form-field>
+
+  <hr class="spacer" />
+
+  <button mat-raised-button type="submit" color="primary">Envoyer</button>
+</form>
