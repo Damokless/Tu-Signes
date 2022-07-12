@@ -1,17 +1,15 @@
 import Fastify from 'fastify'
 import fastifyCors from '@fastify/cors'
-import fastifyFileUpload from 'fastify-file-upload'
+import fastifyMultipart from '@fastify/multipart'
+import fs from 'fs'
 const fastify = Fastify({
   logger: true
 })
-fastify.register(fastifyCors, { origin: '*' }).register(fastifyFileUpload)
-
-fastify.get('/', async (request, reply) => {
-  reply.send({ hello: 'world' })
-})
+fastify.register(fastifyCors, { origin: '*' }).register(fastifyMultipart)
 
 fastify.post('/file/upload', async (request, reply) => {
-  console.log(request.body)
+  const data = await request.file()
+  fs.createWriteStream(data.fields.file.filename).write(await data.toBuffer())
 })
 
 const start = async () => {
