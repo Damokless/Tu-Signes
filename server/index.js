@@ -1,9 +1,10 @@
 import Fastify from 'fastify'
 import fastifyCors from '@fastify/cors'
+import fastifyFileUpload from 'fastify-file-upload'
 const fastify = Fastify({
   logger: true
 })
-fastify.register(fastifyCors, { origin: '*' })
+fastify.register(fastifyCors, { origin: '*' }).register(fastifyFileUpload)
 
 fastify.get('/', async (request, reply) => {
   reply.send({ hello: 'world' })
